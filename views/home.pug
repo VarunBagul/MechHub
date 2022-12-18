@@ -1,0 +1,450 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title PV Square
+  // font awesome cdn link
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css')
+  link(rel='stylesheet' href='https://unpkg.com/swiper@7/swiper-bundle.min.css')
+  // custom css file link
+  link(rel='stylesheet' href='css/home.css')
+// header section starts
+header.header
+  a.logo(href='#')
+    | PV
+    span Square
+  nav.navbar
+    a(href='#home') Home
+    a(href='#about') About
+    a(href='#services') Services
+    a(href='#projects') Projects
+    a(href='#pricing') Pricing
+    a(href='#contact') Contact
+    a(href='#blogs') Blogs
+  .icons
+    #menu-btn.fas.fa-bars
+    #info-btn.fas.fa-info-circle
+    #search-btn.fas.fa-search
+    #login-btn.fas.fa-user
+  form.search-form(action='')
+    input#search-box(type='search' name='' placeholder='search here...')
+    label.fas.fa-search(for='search-box')
+  form.login-form(action='')
+    h3 login form
+    input.box(type='email' placeholder='enter your email')
+    input.box(type='password' placeholder='enter your password')
+    .flex
+      input#remember-me(type='checkbox' name='')
+      label(for='remember-me') remember me
+      a(href='#') forgot password?
+    input.btn(type='submit' value='login now')
+    p
+      | don&apos;t have an account 
+      a(href='/signup') create one!
+.contact-info
+  #close-contact-info.fas.fa-times
+  .info
+    i.fas.fa-phone
+    h3 phone number
+    p +919876543210
+    p +918756934341
+  .info
+    i.fas.fa-envelope
+    h3 email address
+    p varunbagul2510@gmail.com
+    p abc1234@gmail.com
+  .info
+    i.fas.fa-map-marker-alt
+    h3 office address
+    p Bhosari,Pune,India - 400104
+  .share
+    a.fab.fa-facebook-f(href='#')
+    a.fab.fa-twitter(href='#')
+    a.fab.fa-instagram(href='#')
+    a.fab.fa-linkedin(href='#')
+// header section ends
+// home section starts
+section#home.home
+  .swiper.home-slider
+    .swiper-wrapper
+      section.swiper-slide.slide(style='background: url(images/cnc5.jpg ) no-repeat;')
+        .content
+          h3 we provide best service
+          p
+          h2 Looking for an experienced CNC specialist ?
+          p
+          a.btn(href='#about') get started
+      section.swiper-slide.slide(style='background: url(images/cnc4.jpg) no-repeat;')
+        .content
+          h3 making dream come to life
+          p
+          h2
+            | Dedicated to the development of technology through scientific excellence and innovations!
+          p
+          a.btn(href='#about') get started
+      section.swiper-slide.slide(style='background: url(images/home-slide-3.jpg) no-repeat;')
+        .content
+          h3 from concept to creation
+          p
+          h2
+            | Provide High Quality, Low cost, Easy to use products for our customers that integrates technology
+            | and innovations.
+          p
+          a.btn(href='#about') get started
+    .swiper-button-next
+    .swiper-button-prev
+// home section ends
+// about section starts
+section#about.about
+  h1.heading  about us 
+  .row
+    .video
+      video(src='images/about-vid1.mp4' loop='' muted='' autoplay='')
+    .content
+      h3 We will provide you the best work which you dreamt for!
+      p
+        | PV Square is one of the largest one stop solution for computerized machine cutting tools.
+        | Our products are manufactured and assembled locally with customer centric approach.
+        | We are excellent in wide range of CNC Turning Center.The goal is to use advanced technology
+        | for manufacturing the tools to ensure supreme quality of our products.
+      a.btn(href='#services') read more
+  .box-container
+    .box
+      h3 12+
+      p years of experience
+    .box
+      h3 1500+
+      p project completed
+    .box
+      h3 10+
+      p satiesfied clients
+    .box
+      h3 20+
+      p active workers
+// about section ends
+// services section starts
+section#services.services
+  h1.heading  Our services 
+  .box-container
+    .box
+      img(src='images/service-5.png' alt='')
+      h3 Design
+      p
+        | Machine Design helps to understand the designing fundamentals of the most essential and commonly utilized components, elements, parts, and units of several machines.
+    .box
+      img(src='images/service-6.png' alt='')
+      h3 Prototyping
+      p
+        | Prototype machining is a process in which a small number of parts is produced before a bigger batch is required.
+    .box
+      img(src='images/service-3.png' alt='')
+      h3 CNC Machining
+      p
+        | Computer Numerical Control machines are automated machines, which are operated by computers executing pre-programmed sequences of controlled commands.
+    .box
+      img(src='images/service-4.png' alt='')
+      h3 VMC Machining
+      p
+        | Vertical Machining Centers, also known as Vertical Milling Machines, create holes in flat parts. The VMC technology is favored when three-axis work is done on a single face, such as in-mold and die works.
+    .box
+      img(src='images/service-7.png' alt='')
+      h3 Existing part/tool modifications
+      p Equipment modifications are done .
+    .box
+      img(src='images/service-2.png' alt='')
+      h3 3D printing
+      p Product layout printing is done here.
+    .box
+      img(src='images/service-1.png' alt='')
+      h3 Grinding related work
+      p All types of finishing using various grinding tools.
+    .box
+      img(src='images/service-8.png' alt='')
+      h3 Lathe Machining
+      p Helpful in metal-working,metal spinning.
+// services section ends
+// projects section starts
+section#projects.projects
+  h1.heading  our projects 
+  .box-container
+    a.box(href='images/project1.jpg')
+      .image
+        img(src='images/project1.jpg' alt='')
+      .content
+        .info
+          h3 Tooling manufacturers
+          p construction, design
+        i.fas.fa-plus
+    a.box(href='images/project2.jpg')
+      .image
+        img(src='images/project2.jpg' alt='')
+      .content
+        .info
+          h3 Cylinder drilling
+          p design
+        i.fas.fa-plus
+    a.box(href='images/project3.jpg')
+      .image
+        img(src='images/project3.jpg' alt='')
+      .content
+        .info
+          h3 Manifolds
+          p
+        i.fas.fa-plus
+    a.box(href='images/project4.jpg')
+      .image
+        img(src='images/project4.jpg' alt='')
+      .content
+        .info
+          h3 Gearbox Tools
+          p construction
+        i.fas.fa-plus
+    a.box(href='images/project5.jpg')
+      .image
+        img(src='images/project5.jpg' alt='')
+      .content
+        .info
+          h3 Bend clips
+          p
+        i.fas.fa-plus
+    a.box(href='images/project6.jpg')
+      .image
+        img(src='images/project6.jpg' alt='')
+      .content
+        .info
+          h3 Fuel frame line
+          p
+        i.fas.fa-plus
+// projects section ends
+// reviews section starts
+section.reviews
+  h1.heading  clients reviews 
+  .swiper.reviews-slider
+    .swiper-wrapper
+      .swiper-slide.slide
+        p Very Supportive Team and best work in the Industry.
+        .user
+          img(src='images/pic-1.png' alt='')
+          .info
+            h3 Mr.A
+            .stars
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+      .swiper-slide.slide
+        p Good Tool usage and best client satisfaction.
+        .user
+          img(src='images/pic-2.png' alt='')
+          .info
+            h3 Mrs.B
+            .stars
+              i.fas.fa-star
+              i.fas.fa-star
+              
+              i.fas.fa-star
+              i.fas.fa-star
+      .swiper-slide.slide
+        p
+          | After trying many vendors cnc and Vmc work is the best given by them in the whole market.
+        .user
+          img(src='images/pic-3.png' alt='')
+          .info
+            h3 Mr.C
+            .stars
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+      .swiper-slide.slide
+        p
+          | Excellent machining process.
+         
+        .user
+          img(src='images/pic-4.png' alt='')
+          .info
+            h3 Mrs.D
+            .stars
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+      .swiper-slide.slide
+        p
+          | Workers with good skillset work and have good customer relationship skill.
+ 
+        .user
+          img(src='images/pic-5.png' alt='')
+          .info
+            h3 Mr.E
+            .stars
+              i.fas.fa-star
+              i.fas.fa-star
+              
+              i.fas.fa-star
+      .swiper-slide.slide
+        p
+          | The firm can work on varying requirements so the point of requirement completion is satisfied and helps in further deployment of product. 
+      
+        .user
+          img(src='images/pic-6.png' alt='')
+          .info
+            h3 Mrs.F
+            .stars
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              i.fas.fa-star
+              
+// reviews section ends
+// pricing section starts
+section#pricing.pricing
+  h1.heading  Our Patent Pricing 
+  .box-container
+    .box
+      i.fas.fa-home
+      h3 basic plan
+      .price
+        span $
+        | ____
+        span /mo
+      .list
+        p Job design
+        p refurbishment
+        p material supply
+        p maintenance
+        p 24/7 support
+      a.btn(href='#') choose plan
+    .box
+      i.fas.fa-building
+      h3 premium plan
+      .price
+        span $
+        | ____
+        span /mo
+      .list
+        p Job design
+        p refurbishment
+        p material supply
+        p maintenance
+        p 24/7 support
+      a.btn(href='#') choose plan
+    .box
+      i.fas.fa-city
+      h3 ultimate plan
+      .price
+        span $
+        | ____
+        span /mo
+      .list
+        p Job design
+        p refurbishment
+        p material supply
+        p maintenance
+        p 24/7 support
+      a.btn(href='#') choose plan
+// pricing section ends
+// contact section starts
+section#contact.contact
+  h1.heading  contact us 
+  .row
+    iframe.map(src='https://www.google.com/maps/place/Pune,+Maharashtra/@18.5302156,73.9728794,10z/data=!4m5!3m4!1s0x3bc2bf2e67461101:0x828d43bf9d9ee343!8m2!3d18.5204303!4d73.8567437' allowfullscreen='' loading='lazy')
+    form(action='')
+      h3 get in touch
+      input.box(type='text' placeholder='name')
+      input.box(type='email' placeholder='email')
+      input.box(type='number' placeholder='phone')
+      textarea.box(name='' placeholder='message' id='' cols='30' rows='10')
+      input.btn(type='submit' value='send message')
+// contact section ends
+// blogs section starts
+section#blogs.blogs
+  h1.heading  our blogs 
+  .swiper.blogs-slider
+    .swiper-wrapper
+      .swiper-slide.slide
+        .image
+          img(src='images/blognew1.jpg' alt='')
+        .content
+          h3 blog title goes here
+          p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!
+          a.btn(href='#') read more
+      .swiper-slide.slide
+        .image
+          img(src='images/blognew2.jpg' alt='')
+        .content
+          h3 blog title goes here
+          p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!
+          a.btn(href='#') read more
+      .swiper-slide.slide
+        .image
+          img(src='images/blognew3.jpg' alt='')
+        .content
+          h3 blog title goes here
+          p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!
+          a.btn(href='#') read more
+      .swiper-slide.slide
+        .image
+          img(src='images/blog-4.jpg' alt='')
+        .content
+          h3 blog title goes here
+          p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!
+          a.btn(href='#') read more
+      .swiper-slide.slide
+        .image
+          img(src='images/blog-5.jpg' alt='')
+        .content
+          h3 blog title goes here
+          p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!
+          a.btn(href='#') read more
+      .swiper-slide.slide
+        .image
+          img(src='images/blog-6.jpg' alt='')
+        .content
+          h3 blog title goes here
+          p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, nobis!
+          a.btn(href='#') read more
+// blogs section ends
+// client logo section starts
+section.logo-container
+  .swiper.logo-slider
+    .swiper-wrapper
+      .swiper-slide.slide
+        img(src='images/client1.jpg' alt='')
+      .swiper-slide.slide
+        img(src='images/client2.jpg' alt='')
+      .swiper-slide.slide
+        img(src='images/client3.jpg' alt='')
+      .swiper-slide.slide
+        img(src='images/client4.jpg' alt='')
+      .swiper-slide.slide
+        img(src='images/client5.jpg' alt='')
+      .swiper-slide.slide
+        img(src='images/client6.jpg' alt='')
+// client logo section ends
+// footer section starts
+section.footer
+  .links
+    a.btn(href='#home') Home
+    a.btn(href='#about') About
+    a.btn(href='#services') Services
+    a.btn(href='#projects') Projects
+    a.btn(href='#pricing') Pricing
+    a.btn(href='#contact') Contact
+    a.btn(href='#blogs') Blogs
+  .credit
+    | created by 
+    span VBuild 
+    |  | all rights reserved!
+// footer section ends
+script(src='https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js')
+script(src='https://unpkg.com/swiper@7/swiper-bundle.min.js')
+// custom js file link
+script(src='js/styles/script.js')
+script.
+  lightGallery(document.querySelector('.projects .box-container'));

@@ -1,0 +1,36 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+  link(href='https://fonts.googleapis.com/css?family=Lato:300,300i,700' rel='stylesheet')
+  link(rel='stylesheet' href='./css/register.css')
+  title Lala Machines | #{title}
+header.header
+  nav.nav.nav--home
+    a.nav__el(href='/') Home
+  .header__logo
+    img(src='./images/logo.png' alt='Dummy logo')
+  nav.nav.nav--user
+    a.nav__el(href='/') Log in
+main.main
+  .signup-form
+    h2.heading-secondary.ma-bt-lg Create your account
+    form.form--signup
+      .form__scroll
+        .form__group
+          label.form__label(for='name') Name
+          input#name.form__input(type='text' placeholder='You' required='required')
+        .form__group
+          label.form__label(for='email') Email address
+          input#email_signup.form__input(type='email' placeholder='you@example.com' required='required')
+        .form__group.ma-bt-md
+          label.form__label(for='password') Password
+          input#password_signup.form__input(type='password' placeholder='••••••••' required='required' minlength='9')
+        .form__group.ma-bt-md
+          label.form__label(for='passwordConfirm') Confirm Password
+          input#passwordConfirm.form__input(type='password' placeholder='••••••••' required='required' minlength='9')
+      .form__group
+        button.btn.btn--green Register
+script(src='./../js/bundle.js')
