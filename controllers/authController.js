@@ -1,9 +1,9 @@
-const { promisify } = require('util');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const User = require('./../models/userModel');
-const catchAsyncError = require('./../utils/CatchAsync');
-const AppError = require('./../utils/AppError');
+const { promisify } = require("util");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const User = require("./../models/userModel");
+const catchAsyncError = require("./../utils/CatchAsync");
+const AppError = require("./../utils/AppError");
 
 const signToken = (user) => {
   return jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
@@ -11,11 +11,20 @@ const signToken = (user) => {
   });
 };
 
+//cookies
+
 const createSendToken = (user, statusCode, req, res) => {
   const token = signToken(user);
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPRESS_IN * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+  };
+  res.cookie("jwt", token, cookieOptions);
 
   res.status(statusCode).json({
-    status: 'success',
+    status: "success",
     token,
     data: {
       user,
@@ -42,18 +51,18 @@ exports.login = catchAsyncError(async (req, res, next) => {
 
   // 2.) Check if email and password exist
   if (!email || !password) {
-    return next(new AppError('Please provide email and password', 400));
+    return next(new AppError("Please provide email and password", 400));
   }
 
   // 3.) Check if user exists and password is correct or not
-  const user = await User.findOne({ email }).select('+password');
+  const user = await User.findOne({ email }).select("+password");
   if (!user) {
-    return next(new AppError('Incorrect Email or Password', 401));
+    return next(new AppError("Incorrect Email or Password", 401));
   }
 
   const checkPass = await bcrypt.compare(password, user.password);
   if (!checkPass) {
-    return next(new AppError('Incorrect Email or Password', 401));
+    return next(new AppError("Incorrect Email or Password", 401));
   }
 
   // 4.) Send JSON token back to client
@@ -66,16 +75,16 @@ exports.protect = catchAsyncError(async (req, res, next) => {
   let token;
   if (
     req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
+    req.headers.authorization.startsWith("Bearer")
   ) {
-    token = req.headers.authorization.split(' ')[1];
+    token = req.headers.authorization.split(" ")[1];
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
   }
 
   if (!token) {
     return next(
-      new AppError('You are not logged in. Please login to get access.', 404)
+      new AppError("You are not logged in. Please login to get access.", 404)
     );
   }
 
@@ -86,14 +95,14 @@ exports.protect = catchAsyncError(async (req, res, next) => {
   const currentUser = await User.findById(verified.id);
   if (!currentUser) {
     return next(
-      new AppError('The user belonging to this token does not exist', 401)
+      new AppError("The user belonging to this token does not exist", 401)
     );
   }
 
   // 4.) Check if user changed password after token was generated
   if (currentUser.changedPasswordAfter(verified.iat)) {
     return next(
-      new AppError('User recently changed password! Please login again!', 401)
+      new AppError("User recently changed password! Please login again!", 401)
     );
   }
 
