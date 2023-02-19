@@ -17,6 +17,7 @@ const app = express();
 
 // CORS
 app.use(cors());
+app.options("*", cors());
 
 // Setting view engine
 app.set("view engine", "pug");
