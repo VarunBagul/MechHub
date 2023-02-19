@@ -13,11 +13,11 @@ const viewRouter = require("./routes/viewRoutes");
 const AppError = require("./utils/AppError");
 const globalErrorHandler = require("./controllers/errorController");
 
-app.use(express.urlencoded({ extended: true, limit: "10kb" }));
-app.use(cookieParser());
 // Setting up app
 const app = express();
 
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(cookieParser());
 // CORS
 app.use(cors());
 app.options("*", cors());
