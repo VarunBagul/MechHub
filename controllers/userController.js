@@ -1,17 +1,17 @@
-const User = require('../models/userModel');
-const catchAsyncError = require('./../utils/CatchAsync');
-const AppError = require('./../utils/AppError');
+const User = require("../models/userModel");
+const catchAsyncError = require("./../utils/CatchAsync");
+const AppError = require("./../utils/AppError");
 
 // Getting all users from DB ----------> Tested (Working)
 exports.getAllUsers = catchAsyncError(async (req, res, next) => {
   const userData = await User.find();
 
   if (!userData) {
-    return next(new AppError('No Users Found', 404));
+    return next(new AppError("No Users Found", 404));
   }
 
   res.status(200).json({
-    status: 'success',
+    status: "success",
     results: userData.length,
     data: {
       data: userData,
@@ -24,11 +24,11 @@ exports.createUser = catchAsyncError(async (req, res, next) => {
   const newUser = await User.create(req.body);
 
   if (!newUser) {
-    return next(new AppError('Error creating new User. Please try again!'));
+    return next(new AppError("Error creating new User. Please try again!"));
   }
 
   res.status(200).json({
-    status: 'success',
+    status: "success",
     data: {
       data: newUser,
     },
@@ -40,11 +40,11 @@ exports.getUser = catchAsyncError(async (req, res, next) => {
   const searchedUser = await User.findOne({ _id: req.params.id });
 
   if (!searchedUser) {
-    return next(new AppError('User Not Found', 404));
+    return next(new AppError("User Not Found", 404));
   }
 
   res.status(200).json({
-    status: 'success',
+    status: "success",
     data: {
       data: searchedUser,
     },
@@ -59,11 +59,11 @@ exports.updateUser = catchAsyncError(async (req, res, next) => {
   });
 
   if (!updatedUser) {
-    return next(new AppError('User Not Found', 404));
+    return next(new AppError("User Not Found", 404));
   }
 
   res.status(200).json({
-    status: 'success',
+    status: "success",
     data: {
       data: updatedUser,
     },
@@ -75,11 +75,11 @@ exports.deleteUser = catchAsyncError(async (req, res, next) => {
   const deletedUser = await User.findByIdAndDelete(req.params.id);
 
   if (!deletedUser) {
-    return next(new AppError('User Not Found', 404));
+    return next(new AppError("User Not Found", 404));
   }
 
   res.status(204).json({
-    status: 'success',
-    data: 'none',
+    status: "success",
+    data: "none",
   });
 });
